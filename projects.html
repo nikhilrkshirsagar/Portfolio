@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Nikhil Kshirsagar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .projects-container {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.8s ease-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .project-card:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-title {
+            color: var(--text-dark);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .approach-section {
+            margin: 2rem 0;
+        }
+
+        .approach-title {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .approach-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .approach-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .content-section {
+            background: var(--bg-off-white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievements li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 968px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 1.8rem;
+            }
+
+            .approach-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="glass-effect">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="resume.html" class="nav-link">Resume</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+        </nav>
+
+        <h1>Featured Projects</h1>
+
+        <div class="projects-container">
+            <div class="project-card">
+                <h2 class="project-title">PCHP Analytics Using AI</h2>
+                
+                <div class="approach-section">
+                    <h3 class="approach-title">HIGH LEVEL APPROACH</h3>
+                    <img src="pchp-approach.png" alt="PCHP Analytics High Level Approach" class="approach-image">
+                </div>
+
+                <div class="project-content">
+                    <div class="content-section">
+                        <h3 class="section-title">Problem Statement</h3>
+                        <p>The government had funded specialized hospitals for HIV transmission prevention. According to reports from Primary Care HIV Prevention (PCHP) grantees, the allocated funds were not fully utilized. The Health Resources and Services Administration (HRSA) expressed willingness to support the grantees.</p>
+                    </div>
+                    <div class="content-section">
+                        <h3 class="section-title">Solution</h3>
+                        <p>Received detailed reports from all grantees outlining the barriers to fund utilization. Employed the AI's NER model to categorize these barriers and delivered the analytics to HRSA.</p>
+                    </div>
+                </div>
+                <div class="content-section" style="margin-top: 2rem;">
+                    <h3 class="section-title">Key Achievements</h3>
+                    <ul class="achievements">
+                        <li>Minimized the manual effort required to review thousands of quarterly reports</li>
+                        <li>Simplified the analysis of extensive descriptive text fields</li>
+                        <li>Delivered a visually rich experience for senior client management</li>
+                        <li>Automated the entire end-to-end process</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Modern Data Analytics Platform (MDAP)</h2>
+                <div class="project-content">
+                    <div class="content-section">
+                        <h3 class="section-title">Problem Statement</h3>
+                        <p>Government agencies had onboarded new Federal Analysts tasked with extracting insights from terabytes of datasets. Analysts faced challenges in effectively filtering and refining datasets to develop analytical models and visualizations. The lack of streamlined processes hindered timely delivery of actionable insights.</p>
+                    </div>
+                    <div class="content-section">
+                        <h3 class="section-title">Solution</h3>
+                        <p>Delivered a streamlined process focused on robust filtering mechanisms to efficiently extract relevant data subsets. Implemented advanced filtering algorithms and data categorization to enhance analysts' ability to derive meaningful insights.</p>
+                    </div>
+                </div>
+                <div class="content-section" style="margin-top: 2rem;">
+                    <h3 class="section-title">Key Achievements</h3>
+                    <ul class="achievements">
+                        <li>60% reduction in analysts' time spent on developing new analytical models</li>
+                        <li>Decreased data downtime from 6 hours to approximately 1.5 hours</li>
+                        <li>Achieved 75% reduction in data size</li>
+                        <li>Successfully shifted client mindset to tailored data utilization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Program Oversight Module (POM)</h2>
+                <div class="project-content">
+                    <div class="content-section">
+                        <h3 class="section-title">Problem Statement</h3>
+                        <p>Data essential for decision-making was distributed across various data stores, leading to inefficiencies. Accessing data elements required multiple approvals and cumbersome UI/UX page switches, hampering the productivity of federal officers making critical decisions.</p>
+                    </div>
+                    <div class="content-section">
+                        <h3 class="section-title">Solution</h3>
+                        <p>Delivered a centralized Program Oversight Module within HRSA's Electronics Handbook. This unified platform enables seamless visualization and access to core information across business units, mitigating restrictions from disparate data stores.</p>
+                    </div>
+                </div>
+                <div class="content-section" style="margin-top: 2rem;">
+                    <h3 class="section-title">Key Achievements</h3>
+                    <ul class="achievements">
+                        <li>Centralized data without compromising governance principles</li>
+                        <li>Delivered a robust process to avoid security breaches</li>
+                        <li>Increased productivity by 90%</li>
+                        <li>Reduced data availability time from 8 days to immediate access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add active state to current page link
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.style.color = 'var(--primary-color)';
+            }
+        });
+
+        // Add scroll reveal animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

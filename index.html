@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil Kshirsagar - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .profile-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            animation: slideIn 0.8s ease-out 0.2s both;
+        }
+
+        .about-content h1 {
+            text-align: left;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .about-content h1::after {
+            margin: 1rem 0;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .glass-card {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        @media (max-width: 968px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-content h1 {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .about-content h1::after {
+                margin: 1rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="glass-effect">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="resume.html" class="nav-link">Resume</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+        </nav>
+
+        <div class="about-section">
+            <div class="profile-container">
+                <img src="profile.jpg" alt="Nikhil Kshirsagar" class="profile-img">
+            </div>
+            <div class="about-content">
+                <h1>ABOUT ME</h1>
+                <div class="glass-card">
+                    <p>I am <span class="highlight">Nikhil Kshirsagar</span>, an esteemed IT professional boasting over 12 years of expertise in delivery and management, specialized in Data stream. Throughout my tenure with my current organization, I have spearheaded and overseen numerous pioneering projects tailored for esteemed entities such as the Health Resources and Services Administration (HRSA), NASA, and the U.S. General Services Administration (GSA).</p>
+                    
+                    <p>Beyond the realms of my professional endeavors, I am a vibrant individual with a myriad of passions. I relish quality time spent indulging in my diverse array of hobbies. A wordsmith at heart, I find solace in the art of writing and poetry, enriching the <span class="highlight">Marathi community in Washington DC</span> through my dedicated volunteer work. As an avid reader, I am endlessly fascinated by the realms of literature. Music also holds a special place in my heart; I enjoy playing the guitar for pure enjoyment and self-expression.</p>
+                    
+                    <p>Additionally, I find serenity amidst nature's embrace, often enjoying parks, small hikes alongside my cherished family. Speaking of which, my beloved wife, <span class="highlight">Poornima</span>, along with our delightful 8-year-old daughter, <span class="highlight">Ovee</span>, and spirited 4-year-old son, <span class="highlight">Yash</span>, complete the tapestry of joy in my life.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add active state to current page link
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.style.color = 'var(--primary-color)';
+            }
+        });
+
+        // Add scroll reveal animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.glass-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
